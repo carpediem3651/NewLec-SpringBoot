@@ -1,0 +1,49 @@
+.btn{
+    /* font */
+    font-size: 16px;
+    text-align: center;
+    color: white;
+
+    /* box style */
+    width: 53px;
+    height: 35px;
+    border-radius: 8px;
+    border:none;
+    margin: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.btn-main {
+    /* font */
+    font-weight: bold;
+
+    /* box style */
+    background-color: var(--color-main-1);
+    padding: 8px 20px;
+    border:0;
+    color:var(--color-base-0);
+    border-radius: var(--radius-3);
+}
+
+.btn-icon {
+    padding: 0;
+}
+
+/* 비활성화 버튼 */
+.btn-disable {
+    background-var();
+}
+
+/* 색깔 반대되는 버튼 */
+.btn-reverse{
+
+}
+
+/* 하나 만들 때 마다 미디어쿼리 적용해야한다. */
+@media (min-width: 700px) {
+    /* 변화되는 버튼이면 md */
+    .md\:btn-main{
+        border-radius: 0;
+    }
+}

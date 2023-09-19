@@ -1,0 +1,168 @@
+/* icon 공통속성 */
+.icon {
+    display: inline-block;
+    width: var(--icon-size-1);
+    height: var(--icon-size-1);
+    background-size: var(--icon-size-1);
+
+    box-sizing: border-box;
+    /* overflow를 통해 텍스트를 없애버린다*/
+    overflow: hidden;
+    /* padding을 0으로 설정함으로써 아이콘 사이의 간격을 조절한다 */
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+/* 자식 아이콘 공통 */
+.icon::before {
+    content: '';
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    /* background-image: url(/image/icon/settings.svg); */
+    /* background-size:inherit; */
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: inherit;
+    mask-size: inherit;
+    background-color: var(--color-base-9);
+}
+
+/* hover 유틸리티 */
+.icon-hover:hover::before {
+    background-color: var(--color-accent-1);
+}
+
+/* 아이콘 사이즈 유틸리티화 */
+.icon-size\:1 {
+    width: var(--icon-size-1);
+    height: var(--icon-size-1);
+    background-size: var(--icon-size-1);
+}
+
+.icon-size\:2 {
+    width: var(--icon-size-2);
+    height: var(--icon-size-2);
+    background-size: var(--icon-size-2);
+}
+
+.icon-size\:3 {
+    width: var(--icon-size-3);
+    height: var(--icon-size-3);
+    /* background-size: var(--icon-size-3); */
+    -webkit-mask-size: var(--icon-size-3);
+    mask-size: var(--icon-size-3);
+}
+
+/* 아이콘 컬러 유틸리티화 */
+.icon-color\:base-0::before {
+    background-color: var(--color-base-0);
+}
+/* 메인 컬러 */
+.icon-color\:main::before{
+    background-color: var(--color-main-1);
+}
+
+/* 악센트 컬러 */
+.icon-color\:accent::before {
+    background-color: var(--color-accent-1);
+}
+
+/* 아이콘 알람 */
+.icon-count-with {
+    /*  현재 위치를 기준으로 기준점이 결정된다. */
+    position: relative;
+}
+
+.icon-count-with *:last-child{
+    
+    /* 위치 */
+    /* 문서를 기준으로 기준점이 결정된다 */
+    position: absolute; /* 부모의 position이 relative면 absolute는 부모 영역에서 상대적인 위치를 가지게 된다. */
+    left: 0;
+    top: 0;
+
+    /* font style */
+    font-size: 12px;
+
+    /* 박스 style */
+    background-color: red;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    /* 박스안의 개별 요소를 적용할 떄는 inline을 사용 */
+    display: inline-flex;
+    /* 세로 */
+    align-items: center;
+    /* 가로 */
+    justify-content: center;
+    
+}
+
+/* 아이콘 유틸리티화 */
+.icon-settings::before {
+    /* background-color: red; */
+    /* background-image: url(/image/icon/settings.svg); */
+    -webkit-mask-image: url(/image/icon/settings.svg);
+    mask-image: url(/image/icon/settings.svg);
+}
+
+.icon-person::before {
+    /* background-color: black; */
+    /* background-image: url(/image/icon/person.svg); */
+    -webkit-mask-image:url(/image/icon/person.svg);
+    mask-image: url(/image/icon/person.svg);
+}
+
+.icon-cart::before {
+    /* background-color: black; */
+    /* background-image: url(/image/icon/person.svg); */
+    -webkit-mask-image:url(/image/icon/cart.svg);
+    mask-image: url(/image/icon/cart.svg);
+}
+
+.icon-alert::before {
+    /* background-color: black; */
+    /* background-image: url(/image/icon/person.svg); */
+    -webkit-mask-image:url(/image/icon/alert.svg);
+    mask-image: url(/image/icon/alert.svg);
+}
+
+.icon-menu::before {
+    /* background-color: black; */
+    /* background-image: url(/image/icon/person.svg); */
+    -webkit-mask-image:url(/image/icon/menu.svg);
+    mask-image: url(/image/icon/menu.svg);
+}
+
+.icon-sign-out::before {
+    /* background-color: black; */
+    /* background-image: url(/image/icon/person.svg); */
+    -webkit-mask-image:url(/image/icon/sign-out.svg);
+    mask-image: url(/image/icon/sign-out.svg);
+}
+
+@media (min-width:700px){
+    .md\:icon-size\:1{
+        width:var(--icon-size-1);
+        height:var(--icon-size-1);
+        -webkit-mask-size: var(--icon-size-1);
+        mask-size: var(--icon-size-1);
+    }
+    
+    .md\:icon-size\:2{
+        width:var(--icon-size-2);
+        height:var(--icon-size-2);
+        /* background-size: var(--icon-size-2); */
+        -webkit-mask-size: var(--icon-size-2);
+        mask-size: var(--icon-size-2);
+    }
+    
+    .md\:icon-size\:3{
+        width:var(--icon-size-3);
+        height:var(--icon-size-3);
+        -webkit-mask-size: var(--icon-size-3);
+        mask-size: var(--icon-size-3);
+    }
+}

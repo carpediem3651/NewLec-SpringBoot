@@ -1,0 +1,42 @@
+.header {
+    background-color: var(--color-base-12);
+    color: var(--color-base-0);
+    padding: 0 15px;
+    height: 60px;
+    display: flex;
+}
+
+    .header .content-box{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .header .main-menu ul {
+        display: flex;
+        align-items: center;
+    }
+
+    /* 각 요소를 30px로 띄운다. */
+    .main-menu li {
+        margin-left: 30px;
+    }
+
+    /* 맨 처음과 끝은 특별하기 때문에 따로 지정해준다 */
+    .main-menu li:first-child {
+        margin-left:0;
+    }
+
+    @media (min-width:700px) {
+        .header .content-box {
+            width: 1200px;
+        }
+
+        .md\:header {
+            height: 80px;
+        }
+    }

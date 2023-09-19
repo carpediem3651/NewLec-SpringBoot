@@ -1,0 +1,20 @@
+/* html과 body도 기본 크기를 갖는다. 기본크기는 0이라서 페이지 천장에 붙는다. */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+
+    /* 헤더와 푸터 사이를 공백을 두고 정렬한다. */
+    display: flex;
+    flex-direction: column;
+}
+
+/* flex-grow를 이용해 모든 여백을 준다. 헤더와 푸터 사이 공백만들기*/
+.main {
+    flex-grow: 1;
+}

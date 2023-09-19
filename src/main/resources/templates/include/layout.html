@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <!-- 루트 경로는 'static'-->
+    <link href="/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/css/root.css" rel="stylesheet" type="text/css">
+    <link href="/css/util.css" rel="stylesheet" type="text/css">
+    <link href="/css/icon.css" rel="stylesheet" type="text/css">
+    <link href="/css/button.css" rel="stylesheet" type="text/css">
+    <link href="/css/components/header.css" rel="stylesheet" type="text/css">
+    <link href="/css/components/footer.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div th:replace="~{include/header::.header}"></div>
+    <div layout:fragment="main">
+		이 내용 나오면 망한거다.
+	</div>
+    <div th:replace="~{include/footer::.footer}"></div>
+</body>
+</html>
