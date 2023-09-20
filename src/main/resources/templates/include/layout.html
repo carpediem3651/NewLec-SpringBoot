@@ -7,13 +7,16 @@
     <!-- 루트 경로는 'static'-->
     <link href="/css/reset.css" rel="stylesheet" type="text/css">
     <link href="/css/root.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <link href="/css/util.css" rel="stylesheet" type="text/css">
     <link href="/css/icon.css" rel="stylesheet" type="text/css">
     <link href="/css/button.css" rel="stylesheet" type="text/css">
     <link href="/css/components/header.css" rel="stylesheet" type="text/css">
     <link href="/css/components/footer.css" rel="stylesheet" type="text/css">
+    <link href="/css/components/layout.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<!-- root경로는 templates -->
     <div th:replace="~{include/header::.header}"></div>
     <div layout:fragment="main">
 		이 내용 나오면 망한거다.

@@ -1,0 +1,10 @@
+.search-section {
+    width: 360px;
+    height: 180px;
+
+    background-color: rgba(30,30,30,0.7);
+    background-image: url(/image/menu/coffee.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
