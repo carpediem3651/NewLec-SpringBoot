@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-				layout:decorate="~{include/layout.html}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{include/layout.html}">
+
 <head>
-    <title>document</title>
-    <link href="/css/components/menu/search-section.css" rel="stylesheet" type="text/css">
+	<title>document</title>
+	<link href="/css/components/menu/search-section.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
 	<main layout:fragment="main">
 		list page
 		<a href="/index">홈</a>
-	    <a href="/menu/detail">상세메뉴</a>	
-	    
-	    <section class="search-section">
-        <h1>Rland Menu <span class="d:none">검색</span></h1>
-        <!-- <nav>
+		<a href="/menu/detail">상세메뉴</a>
+
+		<section class="search-section">
+			<h1>Rland Menu <span class="d:none">검색</span></h1>
+			<!-- <nav>
             <ul>
                 <li><a href="">전체메뉴</a></li>
                 <li><a href="">커피</a></li>
@@ -34,13 +35,27 @@
                 </fieldset>
             </form>
         </section> -->
-        
-        <nav>
-			
-		</nav>
-    </section>
-	
+		<secation>
+			<h1 class="d:none">제품목록</h1>
+			<div>
+				<section th:each="m : ${list}">
+					<h1 th:text="${m.korName}">카페라떼</h1>
+					<h2>Cafe Latte</h2>
+					<div>4,500원<span>SOLD OUT</span></div>
+					<div>
+						<img src="커피.png">
+					</div>
+					<div>
+						<a class="" href="">좋아요<span>2</span></a>
+					</div>
+					<div>
+						<a class="" href="">장바구니</a>
+						<a class="" href="">결제하기</a>
+					</div>
+				</section>
+			</div>
+		</secation>
+		</section>
 	</main>
-
 </body>
 </html>
