@@ -20,7 +20,7 @@
     <section>
         <h1 class="d:none">상품상세</h1>
         <div>
-            <img scrc="">
+            <img src="">
         </div>
         <h1>카페라떼</h1>
         <h2>Cafe Latte</h2>
@@ -29,21 +29,31 @@
         <form>
             <fieldset>
                 <legend>사이즈</legend>
-                <label><input type="radio" name="size" value="1" checked>Small</label>
-                <label><input type="radio" name="size" value="2">Large</label>
+                <label><input type="radio" name="size" value="1" th:checked="${#numbers.formatInteger(param.size,3)}==1">Small</label>
+                <label><input type="radio" name="size" value="2" th:checked="${#numbers.formatInteger(param.size,3)}==2">Large</label>
             </fieldset>
             <fieldset>
                 <legend>옵션</legend>
-                <label><input type="radio" name="option" value="1">HOT</label>
-                <label><input type="radio" name="option" value="2" checked>ICED</label>
+                <label><input type="radio" name="option" value="1" th:checked="${#numbers.formatInteger(param.size,3)}==1">HOT</label>
+                <label><input type="radio" name="option" value="2" th:checked="${#numbers.formatInteger(param.size,3)}==2">ICED</label>
             </fieldset>
-            <fieldset>
+<!--            <fieldset>
                 <legend>수량</legend>
-                <input class="icon icon-minus" type="submit" name="minus" value="1">
-                <span>1</span>
-                <input type="submit" name="plus" value="1">
+                <input class="icon icon-minus" type="submit" name="inc" value="-1">
+                <span th:text="(${#numbers.formatInteger(param.inc,1)}?:0)+(${#numbers.formatInteger(param.qt,1}}?:1)">1</span>
+                <input type="hidden" name="qt" th:value="(${#numbers.formatInteger(param.inc,1)}?:0)+(${#numbers.formatInteger(param.qt,1}}?:1)">
+                <input type="submit" name="inc" value="1">
                 <span>4,500원</span>
-            </fieldset>           
+            </fieldset>  --> 
+            <fieldset th:with="qt=(${#numbers.formatInteger(param.inc,1)}?:0)+(${#numbers.formatInteger(param.qt,1)}?:1)">
+                <legend>수량</legend>
+                <input class="icon icon-minus" type="submit" name="inc" value="-1" th:disabled="${qt == 0}">
+                <span th:text="${qt}">1</span>
+                <!-- 상태 값 -->
+                <input type="hidden" name="qt" th:value="${qt}">
+                <input type="submit" name="inc" value="1">
+                <span><span th:text="${qt}*4500">4500</span>원</span>
+            </fieldset>         
             <div>
                 <input type="submit" name="temp" value="담기">
                 <input type="submit" name="submit" value="전송">
