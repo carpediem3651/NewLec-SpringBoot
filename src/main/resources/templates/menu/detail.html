@@ -13,16 +13,20 @@
 </head>
 <body>
 	<main layout:fragment="main">
-		<div>
+		<!-- 타임리프 테스트 공간-->
+		<div th:with="qt=(${#numbers.formatInteger(param.inc,1)}?:0)+(${#numbers.formatInteger(param.qt,1)}?:1)">
 			<div>size: <span th:text="${param.size}"></span></div>
 			<div>temp: <span th:text="${param.temp}"></span></div>
+			<div>nulltest1: <span th:text="${#numbers.formatInteger(param.inc,1)}?:0"></span></div>
+			<div>nulltest2: <span th:text="${#numbers.formatInteger(param.qt,1)}?:11"></span></div>
+			<div>param.qt: <span th:text="${#numbers.formatInteger(qt*4500,3,'COMMA')}"></span></di>
 		</div>
-    <section>
+    <section th:object="${menu}">
         <h1 class="d:none">상품상세</h1>
         <div>
             <img src="">
         </div>
-        <h1>카페라떼</h1>
+        <h1 th:text="*{korName}">카페라떼</h1>
         <h2>Cafe Latte</h2>
         <p>알랜드만의 로스팅 기법으로 볶은 원두를 사용하여 추출된 풍부한 에스프레소와 신선한 우유가 어우러진 대표 라떼</p>
 
@@ -40,7 +44,7 @@
 <!--            <fieldset>
                 <legend>수량</legend>
                 <input class="icon icon-minus" type="submit" name="inc" value="-1">
-                <span th:text="(${#numbers.formatInteger(param.inc,1)}?:0)+(${#numbers.formatInteger(param.qt,1}}?:1)">1</span>
+                <span th:text="(${#numbers.formatInteger(param.inc,1)}?:0)+(${#numbers.formatInteger(param.qt,1)}?:1)">1</span>
                 <input type="hidden" name="qt" th:value="(${#numbers.formatInteger(param.inc,1)}?:0)+(${#numbers.formatInteger(param.qt,1}}?:1)">
                 <input type="submit" name="inc" value="1">
                 <span>4,500원</span>
@@ -49,10 +53,10 @@
                 <legend>수량</legend>
                 <input class="icon icon-minus" type="submit" name="inc" value="-1" th:disabled="${qt == 0}">
                 <span th:text="${qt}">1</span>
-                <!-- 상태 값 -->
+                <!-- 상태 값, 누적하기 위한 값을 위한 태그 -->
                 <input type="hidden" name="qt" th:value="${qt}">
                 <input type="submit" name="inc" value="1">
-                <span><span th:text="${qt}*4500">4500</span>원</span>
+                <span th:with="price=*{price}"><span th:text="${#numbers.formatInteger(qt*price,3,'COMMA')}">4500</span>원</span>
             </fieldset>         
             <div>
                 <input type="submit" name="temp" value="담기">

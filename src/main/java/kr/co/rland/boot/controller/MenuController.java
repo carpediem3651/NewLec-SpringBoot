@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.rland.boot.entity.Menu;
+import kr.co.rland.boot.entity.MenuView;
 import kr.co.rland.boot.service.MenuService;
 
 @Controller
@@ -21,16 +22,20 @@ public class MenuController {
 	@RequestMapping("list")
 	public String list(Model model) {
 		
-		List<Menu> list = service.getList();
+//		List<Menu> list = service.getList();
+		List<MenuView> list = service.getViewList();
 		System.out.println(list);
-		model.addAttribute("list", service.getList());
-		
+		model.addAttribute("list", list);
+//		model.addAttribute("list", service.getList());
 		return "menu/list";
 	}
 	
 //	@ResponseBody
 	@RequestMapping("detail")
-	public String detail() {
+	public String detail(Model model, long id) {
+		
+		Menu menu = service.getById(id);
+		model.addAttribute("menu", menu);
 		return "menu/detail";
 	}
 }
