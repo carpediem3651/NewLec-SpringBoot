@@ -11,12 +11,12 @@ public class MenuController {
 //	@ResponseBody
 	@RequestMapping("list")
 	public String list() {
-		return "admin menu list!!!";
+		return "/admin/menu/list";
 	}
 	
 //	@ResponseBody
 	@RequestMapping("detail")
 	public String detail() {
-		return "admin menu datail";
+		return "/admin/menu/detail";
 	}
 }

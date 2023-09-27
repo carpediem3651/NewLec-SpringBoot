@@ -32,7 +32,7 @@ public class MenuController {
 	
 //	@ResponseBody
 	@RequestMapping("detail")
-	public String detail(Model model, long id) {
+	public String detail(Model model, Integer id) {
 		
 		Menu menu = service.getById(id);
 		model.addAttribute("menu", menu);

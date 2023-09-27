@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{admin/inc/layout.html}">
+
+<head>
+	<title>document</title>
+</head>
+
+<body>
+	<main layout:fragment="main">
+		<a class="btn btn-primary" href="index">홈</a>
+		<a href="">메뉴상세</a>
+		<section class="search-section">
+			<h1>Rland Menu <span class="d:none">검색</span></h1>
+			<!-- <nav>
+            <ul>
+                <li><a href="">전체메뉴</a></li>
+                <li><a href="">커피</a></li>
+                <li><a href="">수제청</a></li>
+                <li><a href="">샌드위치</a></li>
+                <li><a href="">쿠키</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h1 class="d:none">이름 검색 폼</h1>
+            <form action="#" method="get">
+                <fieldset>
+                    <legend class="d:none">이름 검색</legend>
+                    <input type="text">
+                    <input type="submit" value="검색">
+                </fieldset>
+            </form>
+        </section> -->
+		<secation>
+			<h1 class="d:none">제품목록</h1>
+			<div>
+				<section th:each="m : ${list}">
+					<h1>
+						<a href="detail?id=1"
+						 th:href="@{detail(id=${m.id})}"
+						 th:text="${m.korName}">카페라떼</a></h1>
+					<h2>
+						<a href="detail?id=1"
+						 th:href="@{detail(id=${m.id})}"
+						 th:text="${m.engName}">Cafe Latte</h2>
+					<div th:text="${m.price}">4,500원<span>SOLD OUT</span></div>
+					<div>
+						<img src="커피.png">
+					</div>
+					<div>
+						<a class="" href="">좋아요<span th:text="${m.likeCount}">2</span></a>
+					</div>
+					<div>
+						<a class="" href="">장바구니</a>
+						<a class="" href="">결제하기</a>
+					</div>
+				</section>
+			</div>
+		</secation>
+		</section>
+	</main>
+</body>
+</html>

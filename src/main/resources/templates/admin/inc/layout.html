@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/css/admin/admin/root.css" rel="stylesheet" type="text/css">
+    <link href="/css/admin/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/admin/util.css" rel="stylesheet" type="text/css">
+    <link href="/css/admin/icon.css" rel="stylesheet" type="text/css">
+    <link href="/css/admin/button.css" rel="stylesheet" type="text/css">
+    <link href="/css/admin/components/header.css" rel="stylesheet" type="text/css">
+    <link href="/css/admin/components/footer.css" rel="stylesheet" type="text/css">
+    <link href="/css/admin/components/layout.css" rel="stylesheet" type="text/css">
+	<title>test</title>
+
+</head>
+
+<body>
+	<!-- root경로는 templates -->
+	<div th:replace="~{admin/inc/header::.header}"></div>
+	<div th:replace="~{admin/inc/aside::.aside}"></div>
+	<div layout:fragment="main">
+		이 내용 나오면 망한거다.
+	</div>
+	<div th:replace="~{include/footer::.footer}"></div>
+</body>
+
+</html>
