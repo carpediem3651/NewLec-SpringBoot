@@ -10,6 +10,14 @@
 		from menu
 	</select>
 
+	<select id="last" resultType="Menu">
+		select
+		*
+		from menu
+		order by id desc
+		limit 1
+	</select>
+
 	<select id="findViewAll" resultType="MenuView">
 		select *
 		from menu_view
@@ -24,6 +32,20 @@
 		insert into menu(kor_name, eng_name, price, img, member_id)
 		values(#{korName}, #{engName}, #{price}, #{img}, #{memberId})
 	</insert>
+
+	<update id="update" parameterType="Menu">
+		UPDATE `menu`
+		<set>
+		  <if test="korName != null">`kor_name` = #{korName},</if>
+		  <if test="engName != null">`eng_name` = #{engName},</if>
+		  <if test="price != null">`price` = #{price},</if>
+		  <if test="img != null">`img` = #{img},</if>
+		  <if test="regDate != null">`reg_date` = #{regDate},</if>	
+		  <if test="hit != null">`hit` = #{hit},</if>	
+		  <if test="memberId != null">`member_id` = #{memberId}</if>	
+		</set>
+		WHERE `id` = #{id}
+	</update>
 
 	<select id="findById" resultType="Menu">
 		select * from menu where id =

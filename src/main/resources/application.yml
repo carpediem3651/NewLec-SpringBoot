@@ -1,0 +1,16 @@
+#mybatis.configuration.map-underscore-to-camel-case: true
+#mybatis.mapper-locations=mappers/*Mapper.xml
+#mybatis.type-aliases-package=kr.co.rland.boot.entity
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mappers/*Mapper.xml
+  type-aliases-package: kr.co.rland.boot.entity
+  
+#파일 크기 설정
+spring:
+  servlet:
+    multipart:
+      max-file-size: 600MB #보내는 파일 각각의 크기
+      max-request-size: 600MB #보내는 파일 전체 크기

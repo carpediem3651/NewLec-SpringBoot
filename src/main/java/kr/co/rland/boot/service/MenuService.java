@@ -9,4 +9,6 @@ public interface MenuService {
 	List<Menu> getList();
 	Menu getById(long id);
 	List<MenuView> getViewList();
+	Menu add(Menu menu);
+	Menu modify(Menu menu);
 }

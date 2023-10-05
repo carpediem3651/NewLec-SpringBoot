@@ -13,4 +13,7 @@ public interface MenuRepository {
 	List<Menu> findAll();
 	Menu findById(long id);
 	List<MenuView> findViewAll();
+	void save(Menu menu);
+	Menu last();
+	void update(Menu menu);
 }
