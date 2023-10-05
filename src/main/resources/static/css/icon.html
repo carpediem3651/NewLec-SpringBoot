@@ -8,25 +8,44 @@
     <link href="root.css" rel="stylesheet" type="text/css">
     <link href="icon.css" rel="stylesheet" type="text/css">
     <link href="button.css" rel="stylesheet" type="text/css">
+    <!-- 아이콘이 항상 버튼보다 먼저! -->
+
 </head>
 <body>
+    <!-- 선생님은 span을 했지만 a 태그(인라인태그)로 해도 상관없고~  -->
+
+    <div> --------------------button------------------</div>
     <ul>
         <li>
-            <!-- 버튼 위에 아이콘 -->
-            <a href="" class="icon icon-size:1 icon-settings">
-                설정
-            </a>
-            <!-- 글자 위에 아이콘 -->
-            <button class="icon icon-size:3 icon-settings">
-                설정
-            </button>
-            <span>class="icon icon-settings"</span>
+            <button class="btn-main md:btn-main"> 버튼 </button>
         </li>
         <li>
-            <span class="icon icon-size:3 icon-color:accent icon-person">회원</span>
+            <button class="btn-main  "> 버튼 </button>
+        </li>
+        <li>
+            <button class="icon btn-main"> 버튼 </button>
+        </li>
+        <li>
+            <button class="btn-main btn-disable"> 버튼 </button>
+        </li>
+    </ul>
 
-            <span>class="icon icon-person"</span>
+
+
+    <ul>
+        <li>
+            <a href ="" class=" btn-accent icon icon-settings"> 설정  </a>
+            <button class=" icon icon-size:3 icon-settings"> 설정  </button>
+            <span> class="icon icon-settings"</span>
+        </li>
+        
+        <!-- 글자가 사라지고 아이콘으로 바꿀건데 어떻게 할거니 -->
+        
+        <li>
+            <span class = " icon icon-size-3 icon-color:main icon-person" style="vertical-align: middle;"> 회원 </span>
+            <span> class=" icon icon-person"</span>
         </li>
     </ul>
 </body>
 </html>
+

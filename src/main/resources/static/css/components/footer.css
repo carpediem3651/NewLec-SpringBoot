@@ -1,28 +1,37 @@
-.footer {
-    /* 랩핑을 먼저하고 정렬한다. 정렬을 하기 위해선 여백이 있어야한다. */
+  /* @import url('https://fonts.googl/eapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
+  
+  .footer{
+    color : var(--color-base-0);
+    background-color: var(--color-base-9);
+    padding: var(--gap-5);
+
     display: flex;
     justify-content: center;
 
-    color: var(--color-base-0);
-    background-color: var(--color-base-9);
-    padding: var(--gap-5);
 }
-    .footer dl {
-        display: grid;
-        grid-template-columns: 150px 1fr;
-        gap: 8px 5px;
-    }
 
-    .footer dt {
-        justify-self: right;
-    }
+.footer dl{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 8px 5px;
+    
+}
 
-    .footer dt::after {
-        content: ":";
-    }
+.footer dt{
+    justify-self:right;
+}
 
-    .footer dt,
-    .footer dd {
-        display: inline-block;
-    }
+.footer dt::after{
+    content: ":";
+    
+}
 
+.footer dt,
+.footer dd{
+    display: inline-block;
+
+}
+
+/* .footer .span-c2{
+    grid-column: span 2;
+} */

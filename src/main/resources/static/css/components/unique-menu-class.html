@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html lang="en" 
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="~{inc/layout.html}">
-	
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document2</title>
-    
-    <link href="/css/index.css" rel="stylesheet" type="text/css">
-    <link href="/css/components/unique-menu.css" rel="stylesheet" type="text/css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- <link href="../reset.css" rel="stylesheet" type="text/css"> -->
+  <link href="../root.css" rel="stylesheet" type="text/css">
+  <link href="../style.css" rel="stylesheet" type="text/css">
+  <link href="../util.css" rel="stylesheet" type="text/css">
+  <link href="../icon.css" rel="stylesheet" type="text/css">
+  <link href="../button.css" rel="stylesheet" type="text/css">
+  <link href="unique-menu-class.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
-	<main layout:fragment="main">
-		index page
-	<a href="/menu/list">메뉴목록 </a>
-	
-	<section class="unique-menu">
+    <section class="unique-menu">
         <h1 class=" title d:none md:d:block">알랜드만의 특별함</h1>
 
             <div class="list">
@@ -57,9 +56,5 @@
 
             </div>
     </section>
-	</main>
-		
-
-</body>	
+</body>
 </html>
-

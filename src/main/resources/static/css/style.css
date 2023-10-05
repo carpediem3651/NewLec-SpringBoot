@@ -1,20 +1,35 @@
-/* html과 body도 기본 크기를 갖는다. 기본크기는 0이라서 페이지 천장에 붙는다. */
+/* 
 
-html,
-body {
+html이 가진 기본 스타일이 있는게 그게 마음에 안들어서 
+오버라이딩, 캐스캐이딩 하는 거야. 
+재정의 하는 거니까
+태그명으로 오버라이딩 하는 거야!!!!!! 
+
+
+기존 스타일 뭉개고 몇개만 살려서 쓰는
+*/
+
+/* html이랑 body 공통으로 높이 정함.
+둘을 하나로 묶어서 100%의 범위를 갖게 */
+
+html
+, body{
+
     height: 100%;
+
 }
 
-body {
+body{
+
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 14px;
-
-    /* 헤더와 푸터 사이를 공백을 두고 정렬한다. */
+    color: var(--color-base-9);
+    
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* 방향성 바꾸기  */
+    
 }
 
-/* flex-grow를 이용해 모든 여백을 준다. 헤더와 푸터 사이 공백만들기*/
-.main {
+main{
     flex-grow: 1;
 }

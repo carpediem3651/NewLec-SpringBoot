@@ -1,5 +1,5 @@
-.header {
-    background-color: var(--color-base-12);
+.header{
+    background-color: var(--color-base-8);
     color: var(--color-base-0);
     padding: 0 15px;
     height: 60px;
@@ -7,7 +7,8 @@
     flex-shrink: 0;
 }
 
-    .header .content-box{
+    .header 
+        .content-box{
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -17,27 +18,27 @@
         margin-right: auto;
     }
 
-    .header .main-menu ul {
+    .header .main-menu ul{
         display: flex;
         align-items: center;
     }
 
-    /* 각 요소를 30px로 띄운다. */
-    .main-menu li {
+    .main-menu li{
         margin-left: 30px;
     }
 
-    /* 맨 처음과 끝은 특별하기 때문에 따로 지정해준다 */
-    .main-menu li:first-child {
-        margin-left:0;
+    .main-menu li:first-child{
+        margin-left: 30px;
     }
 
-    @media (min-width:700px) {
-        .header .content-box {
+
+    @media (min-width: 700px) {
+        .header 
+            .content-box{
             width: 1200px;
         }
-
-        .md\:header {
-            height: 80px;
+ 
+        .md\:header{
+          height: 80px;
         }
     }
